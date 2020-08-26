@@ -32,7 +32,7 @@ if [ -z "$CPS" ]; then
   exit
 fi
 
-let DURATION=CONCURRENTCALLS/CPS
+DURATION=`python -c "print $CONCURRENTCALLS / $CPS"`
 RATE_PERIOD=`python -c "print 1.0 / $CPS"`
 if [ -z "$DURATION" ]; then
   usage
