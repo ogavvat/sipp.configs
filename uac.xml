@@ -48,7 +48,10 @@
     ]]>
   </send>
 
-  <recv request="INVITE" optional="true">
+  <recv request="INVITE" optional="global">
+  </recv>
+
+  <recv request="BYE" optional="global">
   </recv>
 
   <recv response="100" optional="true">

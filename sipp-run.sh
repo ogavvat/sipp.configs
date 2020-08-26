@@ -43,6 +43,6 @@ if [ -z "$RATE_PERIOD" ]; then
   exit
 fi
 
-echo sipp -sf uac.xml $REMOTE_HOST -r 1 -rp ${RATE_PERIOD}s -l $CONCURRENTCALLS -d ${DURATION}s -s $USERNAME -key callerid $CALLERID -rtp_echo  
-sipp -sf uac.xml $REMOTE_HOST -r 1 -rp ${RATE_PERIOD}s -l $CONCURRENTCALLS -d ${DURATION}s -s $USERNAME -key callerid $CALLERID -rtp_echo  
+echo sipp -sf uac.xml $REMOTE_HOST -r 1 -rp ${RATE_PERIOD}s -l $CONCURRENTCALLS -d ${DURATION}s -s $USERNAME -key callerid $CALLERID -rtp_echo -trace_err
+sipp -sf uac.xml $REMOTE_HOST -r 1 -rp ${RATE_PERIOD}s -l $CONCURRENTCALLS -d ${DURATION}s -s $USERNAME -key callerid $CALLERID -rtp_echo -trace_err
 
