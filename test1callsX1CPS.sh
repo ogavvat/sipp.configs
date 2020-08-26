@@ -1,3 +1,19 @@
-#!/bin/sh
-sipp -sf uac.xml 40.115.236.155 -r 1  -rp 0.1s -l 1 -d 1s -s 0999999999 -key callerid 0311112222 -rtp_echo  
+#!/bin/bash
+
+source './.env'
+
+if [ -z "$REMOTE_HOST" ]; then
+        echo " - REMOTE_HOST Environment Variable should be set in .env file"
+        exit
+fi
+if [ -z "$CALLERID" ]; then
+        echo " - CALLERID Environment Variable should be set in .env file"
+        exit
+fi
+if [ -z "$SERVICE" ]; then
+        echo " - SERVICE Environment Variable should be set in .env file"
+        exit
+fi
+
+sipp -sf uac.xml $REMOTE_HOST -r 1  -rp 0.1s -l 1 -d 1s -s $SERVICE -key callerid $CALLERID -rtp_echo  
 
